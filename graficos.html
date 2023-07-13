@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FXMaster - Documentação</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<header id="header">
+    <div class="inner">
+        <a href="index3.html" class="logo">JavaFX</a>
+        <nav id="nav">
+            <a href="index3.html">Home</a>
+            <a href="texto.html">Documentação</a>
+            <a href="index.html">Videos</a>
+        </nav>
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<section id="main">
+    <div class="inner">
+        <header class="major special">
+            <h1>Documentação</h1>
+            <p>Tutorial através da documentação do JavaFX</p>
+        </header>
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+        <h3>Graficos</h3>
+        <p style="text-align: justify;">No JavaFX, você pode criar gráficos e visualizações interativas usando a classe Chart e suas subclasses. O JavaFX fornece várias subclasses de Chart, como LineChart, BarChart, PieChart, entre outras, para atender diferentes tipos de gráficos. Aqui está uma explicação básica sobre como criar gráficos em JavaFX:
+            <br>public class TutorialGraficoJavaFX extends Application {
+
+                <br>@Override
+                <br>public void start(Stage primaryStage) {
+                    <br>// Criação dos eixos do gráfico
+                    <br>CategoryAxis xAxis = new CategoryAxis();
+                    <br>NumberAxis yAxis = new NumberAxis();
+            
+                    <br>// Criação do gráfico de barras
+                    <br>BarChart, Number barChart = new BarChart<>(xAxis, yAxis);
+                    <br>barChart.setTitle("Exemplo de Gráfico de Barras");
+                    <br>xAxis.setLabel("Categorias");
+                    <br>yAxis.setLabel("Valores");
+            
+                    <br>// Criação da série de dados
+                    <br>XYChart.Series, Number series = new XYChart.Series<>();
+                    <br>series.getData().add(new XYChart.Data<>("Categoria 1", 10));
+                    <br>series.getData().add(new XYChart.Data<>("Categoria 2", 20));
+                    <br>series.getData().add(new XYChart.Data<>("Categoria 3", 15));
+            
+                    <br>// Adição da série ao gráfico
+                    <br>barChart.getData().add(series);
+            
+                    <br>// Criação da cena com o gráfico como raiz
+                    <br>Scene scene = new Scene(barChart, 400, 300);
+            
+                    <br>// Configuração da cena no palco principal (Stage)
+                    <br>primaryStage.setScene(scene);
+                    <br>primaryStage.setTitle("Exemplo de Gráfico JavaFX");
+                    <br>primaryStage.show();
+                <br>}
+            
+                <br>public static void main(String[] args) {
+                    <br>launch(args);
+                <br>}
+            <br>}
+        </p>
+    </div>
+    
+</section>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FXMaster - Documentação</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<header id="header">
+    <div class="inner">
+        <a href="index3.html" class="logo">JavaFX</a>
+        <nav id="nav">
+            <a href="index3.html">Home</a>
+            <a href="texto.html">Documentação</a>
+            <a href="index.html">Videos</a>
+        </nav>
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<section id="main">
+    <div class="inner">
+        <header class="major special">
+            <h1>Documentação</h1>
+            <p>Tutorial através da documentação do JavaFX</p>
+        </header>
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+        <h3>Animação Fade in e Fade out</h3>
+        <p style="text-align: justify;">A animação de Fade In e Fade Out no JavaFX é usada para criar transições suaves entre elementos visuais, onde um elemento desaparece gradualmente (fade out) e outro elemento aparece gradualmente (fade in). Aqui está uma explicação básica sobre como implementar essas animações:
+            <br>public class TutorialAnimacaoFadeJavaFX extends Application {
+
+                <br>@Override
+                <br>public void start(Stage primaryStage) {
+                    <br>   // Criação do retângulo
+                    <br>    Rectangle rectangle = new Rectangle(100, 100, Color.RED);
+            
+                    <br> // Criação da animação Fade In
+                    <br>FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), rectangle);
+                    <br> fadeIn.setFromValue(0.0);
+                    <br> fadeIn.setToValue(1.0);
+            
+                    <br>  // Criação da animação Fade Out
+                    <br> FadeTransition fadeOut = new FadeTransition(Duration.seconds(2), rectangle);
+                    <br>  fadeOut.setFromValue(1.0);
+                    <br> fadeOut.setToValue(0.0);
+            
+                    <br>  // Execução da animação Fade In seguida do Fade Out
+                    <br> fadeIn.setOnFinished(event -> fadeOut.play());
+                    <br> fadeIn.play();
+            
+                    <br>  // Criação do layout e adição do retângulo
+                    <br>  StackPane root = new StackPane();
+                    <br>  root.getChildren().add(rectangle);
+            
+                    <br>// Criação da cena com o layout como raiz
+                    <br> Scene scene = new Scene(root, 200, 200);
+            
+                    <br>   // Configuração da cena no palco principal (Stage)
+                    <br> primaryStage.setScene(scene);
+                    <br>  primaryStage.setTitle("Exemplo de Animação Fade JavaFX");
+                    <br>  primaryStage.show();
+                    <br> }
+            
+                    <br> public static void main(String[] args) {
+                        <br>     launch(args);
+                        <br>  }
+                        <br> }
+        </p>
+    </div>
+    
+</section>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

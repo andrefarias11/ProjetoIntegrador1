@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FXMaster - Documentação</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<header id="header">
+    <div class="inner">
+        <a href="index3.html" class="logo">JavaFX</a>
+        <nav id="nav">
+            <a href="index3.html">Home</a>
+            <a href="texto.html">Documentação</a>
+            <a href="index.html">Videos</a>
+        </nav>
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<section id="main">
+    <div class="inner">
+        <header class="major special">
+            <h1>Documentação</h1>
+            <p>Tutorial através da documentação do JavaFX</p>
+        </header>
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
+        <h3>Drag and Drop</h3>
+        <p style="text-align: justify;">A funcionalidade de Drag and Drop permite arrastar elementos de um local para outro em um aplicativo JavaFX. Veja um exemplo básico de como habilitar o Drag and Drop:
+
+            <br>Node node = ...; // Nó que deseja tornar "arrastável"
+            <br>node.setOnDragDetected(event -> {
+                <br>Dragboard dragboard = node.startDragAndDrop(TransferMode.MOVE);
+                <br>ClipboardContent content = new ClipboardContent();
+                <br>content.putString("Informações adicionais");
+                <br>dragboard.setContent(content);
+                <br>});
+            
+                <br>Node targetNode = ...; // Nó que receberá o elemento arrastado
+                <br>targetNode.setOnDragOver(event -> {
+                    <br>if (event.getGestureSource() != targetNode && event.getDragboard().hasString()) {
+                        <br>event.acceptTransferModes(TransferMode.MOVE);
+                        <br>}
+                        <br>event.consume();
+                        <br>});
+            
+                        <br>targetNode.setOnDragDropped(event -> {
+                            <br>Dragboard dragboard = event.getDragboard();
+                            <br>boolean sucesso = false;
+                            <br>if (dragboard.hasString()) {
+                                <br>// Lógica para processar o elemento arrastado
+                                <br>sucesso = true;
+                                <br>}
+                                <br>event.setDropCompleted(sucesso);
+                                <br>event.consume();
+                                <br>});
+                                <br>Nesse exemplo, o "node" é torna "arrastável" e o "targetNode" é o destino onde o elemento arrastado pode ser solto.</p>
+    </div>
+    
+</section>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
